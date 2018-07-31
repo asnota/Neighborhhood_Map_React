@@ -7,11 +7,11 @@ class App extends Component {
       initMap('https://maps.googleapis.com/maps/api/js?key=AIzaSyB1ijS6t6OKocfsfAdu9Nuawo1NfwzJLHQ&v=3&callback=initMap')
     }
 
-  
 
   render() {
     return (
-      <Map />
+      <Map
+        />
     );
   }
 }
