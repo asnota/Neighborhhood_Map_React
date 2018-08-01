@@ -1,18 +1,45 @@
 import React, { Component } from 'react';
 
 
-class Map extends Component {
+export class Map extends Component {
 
-  initMap = () => {
-      const map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 40.7413549, lng: -73.9980244},
-          zoom: 13
-        });
-      }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.google !== this.props.google) {
+      this.loadMap();
+    }
+  }
+
+  componentDidMount() {
+    this.loadMap();
+  }
+
+  loadMap() {
+    if (this.props && this.props.google) {
+    // google is available
+    const {google} = this.props;
+    const maps = google.maps;
+
+/*
+    const mapRef = this.refs.map;
+    const node = ReactDOM.findDOMNode(mapRef);
+
+    let zoom = 14;
+    let lat = 37.774929;
+    let lng = -122.419416;
+    const center = new maps.LatLng(lat, lng);
+    const mapConfig = Object.assign({}, {
+      center: center,
+      zoom: zoom
+    })
+
+    this.map = new maps.Map(node, mapConfig);
+*/
+    }
+  }
 
   render(){
     return(
-      <div id="map"></div>
+      <div ref='map'>Loading map...</div>
     );
   }
 }
