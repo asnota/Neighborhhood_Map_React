@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { GoogleMap, Marker } from "react-google-maps"
 
 
 export class Map extends Component {
@@ -19,7 +21,7 @@ export class Map extends Component {
     const {google} = this.props;
     const maps = google.maps;
 
-/*
+
     const mapRef = this.refs.map;
     const node = ReactDOM.findDOMNode(mapRef);
 
@@ -33,7 +35,7 @@ export class Map extends Component {
     })
 
     this.map = new maps.Map(node, mapConfig);
-*/
+
     }
   }
 
